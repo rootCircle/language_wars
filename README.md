@@ -37,5 +37,7 @@ The **produce_x** file will create an output.txt file containing X gb worth of w
 It is suggested that you keep the output file size in the range of 100-200mb.
 
 To run:
-produce_x 0.2
-produce_x 0.15
+
+`produce_x 0.2` # creates around 200mb
+
+`produce_x 0.15` # creates around 150mb
