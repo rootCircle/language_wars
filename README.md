@@ -31,11 +31,6 @@ Following parameters will be used for judging:
 - Execution Time – Faster solutions will receive higher scores.
 - Memory Efficiency – Solutions that minimize memory usage will be prioritized.
 
-## Performance Considerations
-- Processing files sequentially is likely to be slow and inefficient due to sheer data volume.
-- Well-structured solutions will ensure continuous data flow without blocking execution, avoiding unnecessary disk I/O overhead.
-- A high-performance approach will account for concurrent processing, allowing multiple large files to be handled in tandem to reduce execution time.
-
 ## Helper Files
 
 The **produce_x** file will create an output.txt file containing X gb worth of words.
