@@ -12,6 +12,8 @@ Your program must be optimized for scale, processing large number of words acros
 - Maintain deterministic output, meaning the result should remain consistent across different runs regardless of variations in processing order.
 - No external libraries or commands should be used
 
+## Constraint
+10 min wait time for making a new submission
 
 ## Input Data:
 - Test files are located in the /test_cases directory.
@@ -25,11 +27,22 @@ For this challenge, a word is any contiguous sequence of non‐whitespace Unicod
 The program must output a single integer—the total count of unique words across all processed files.
 
 ## Evaluation Criteria
+Your program will be run on a few edges cases before the official tests.
+
+Following parameters will be used for judging: 
 - Execution Time – Faster solutions will receive higher scores.
 - Memory Efficiency – Solutions that minimize memory usage will be prioritized.
-- Correctness – The output must correctly represent the total unique word count.
 
 ## Performance Considerations
 - Processing files sequentially is likely to be slow and inefficient due to sheer data volume.
 - Well-structured solutions will ensure continuous data flow without blocking execution, avoiding unnecessary disk I/O overhead.
 - A high-performance approach will account for concurrent processing, allowing multiple large files to be handled in tandem to reduce execution time.
+
+## Helper Files
+
+The **produce_x** file will create an output.txt file containing X gb worth of words.
+It is suggested that you keep the output file size in the range of 100-200mb.
+
+To run:
+produce_x 0.2
+produce_x 0.15
