@@ -13,9 +13,9 @@ Steps to Use Hyperfine:
 
 Run the Benchmark:
 
-    Use hyperfine to execute a specific command or script repeatedly to measure its execution time.
+Use hyperfine to execute a specific command or script repeatedly to measure its execution time.
 
-hyperfine './your_program arg1 arg2'
+    hyperfine './your_program arg1 arg2'
 
 To compare two or more commands, you can run:
 
