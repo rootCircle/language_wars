@@ -22,7 +22,8 @@ Develop a highly performant and resource-friendly program that identifies all un
 
 ## Definition of a Word
 
-For this challenge, a word is any contiguous sequence of non‐whitespace Unicode characters normalized for comparison, with diacritics considered equivalent
+- For this challenge, a word is any contiguous sequence of non‐whitespace Unicode characters normalized for comparison, with diacritics considered equivalent
+- The maximum length of any word can be safely assumed as 32 bytes.
 
 ## Expected Output
 
