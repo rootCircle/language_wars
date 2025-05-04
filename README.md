@@ -43,6 +43,7 @@ To run:
 `./produce_x 0.15` # creates around 150mb
 
 
-there is bug in produce_x program over any input value >=1
+there is bug in produce_x program in any input value >=1
 **file_generator** program is your go to program if you want to generate file over 1 gb
+
 `./file_generator 2` # creates around 2gb
