@@ -1,3 +1,4 @@
+use rand::random_range;
 use rand::{distr::Alphanumeric, Rng};
 use std::env;
 use std::fs::File;
@@ -8,8 +9,8 @@ const WORD_MIN: usize = 6;
 const WORD_MAX: usize = 8;
 
 fn generate_word() -> String {
-    let len = rand::thread_rng().gen_range(WORD_MIN..=WORD_MAX);
-    rand::thread_rng()
+    let len = random_range(WORD_MIN..=WORD_MAX);
+    rand::rng()
         .sample_iter(&Alphanumeric)
         .filter(|c| c.is_ascii_alphabetic())
         .take(len)
@@ -28,7 +29,11 @@ fn main() {
     let gb: f32 = args[1].parse().expect("Invalid number for GB input");
     let bytes_needed: f32 = gb * 1024_f32 * 1024_f32 * 1024_f32;
 
-    let file = File::create("output.txt").expect("Failed to create file");
+    let file_name = format!("test_cases/output_{}.txt", rand::random_range(0..=100));
+
+    std::fs::create_dir_all("test_cases").expect("Failed to create directory");
+
+    let file = File::create(&file_name).expect("Failed to create file");
     let mut writer = BufWriter::new(file);
 
     let mut bytes_written: f32 = 0_f32;
@@ -44,5 +49,6 @@ fn main() {
     }
 
     writer.flush().expect("Flush failed");
+    println!("{file_name}");
     println!("Generated {} GB of word data in output.txt", gb);
 }
