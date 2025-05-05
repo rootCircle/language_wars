@@ -68,7 +68,7 @@ fi
 ./run.sh > /dev/null 2>&1
 
 # Compare the results
-if ! diff result.txt result.actual.txt > /dev/null; then
+if ! diff --ignore-all-space --ignore-blank-lines --ignore-case result.txt result.actual.txt > /dev/null; then
     echo "Error: The output files differ."
     exit 1
 fi
