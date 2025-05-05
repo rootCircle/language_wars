@@ -49,4 +49,11 @@ To run:
 ./file_generator_mb test_cases/out.txt 2000
 ```
 
-This command creates a file around 2 GB under the `test_cases` directory.
+This command creates a file around 2 GB under the `test_cases` directory. (Expect this to be buggy and slow)
+
+Alternatively, you can use `produce_x` for generating files as well!
+
+```bash
+./produce_x 0.2 # generates file at test_cases directory by default of size 0.2 GiB
+```
+
