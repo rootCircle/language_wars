@@ -6,7 +6,7 @@ use std::time::Instant;
 
 // Default target size set to 20 GiB
 const DEFAULT_TARGET_SIZE_BYTES: u64 = 20 * 1024 * 1024 * 1024;
-const WORD_LEN: usize = 4;
+const WORD_LEN: usize = 5;
 
 // Define a chunk size for generating data before writing to BufWriter.
 // A larger chunk size generally leads to fewer write calls, improving performance.

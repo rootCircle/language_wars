@@ -29,7 +29,7 @@ fn main() {
     let gb: f32 = args[1].parse().expect("Invalid number for GB input");
     let bytes_needed: f32 = gb * 1024_f32 * 1024_f32 * 1024_f32;
 
-    let file_name = format!("test_cases/output_{}.txt", rand::random_range(0..=100));
+    let file_name = format!("test_cases/output_{}.txt", rand::random_range(0..=1000));
 
     std::fs::create_dir_all("test_cases").expect("Failed to create directory");
 
@@ -49,6 +49,5 @@ fn main() {
     }
 
     writer.flush().expect("Flush failed");
-    println!("{file_name}");
-    println!("Generated {} GB of word data in output.txt", gb);
+    println!("Generated {} GB of word data in {}", gb, file_name);
 }
