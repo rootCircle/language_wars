@@ -28,9 +28,7 @@ tmp_file=$(mktemp)
 
 cat "$@" | \
 tr -s '[:space:]' '\n' | \
-tr '[:upper:]' '[:lower:]' | \
-sort | \
-uniq > "$tmp_file"
+sort --parallel=12 -u --ignore-case --output="$tmp_file"
 
 mv "$tmp_file" "$output_file"
 
