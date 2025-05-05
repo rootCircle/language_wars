@@ -1,6 +1,6 @@
-# Code Smackdown (by FOSS Wing 💚)
+# Code Smackdown (by FOSS Wing, Axios 💚)
 
-## Problem Statement:
+## Problem Statement
 
 Develop a highly performant and resource-friendly program that identifies all unique words present across a collection of multiple text files located within a specified directory (`./test_files`). The identified unique words must then be sorted alphabetically and written to a single output file named `result.txt`.
 
@@ -15,7 +15,8 @@ Develop a highly performant and resource-friendly program that identifies all un
 - Submissions will be done on [Google Form](https://forms.gle/VG4zyWQTFiQtEj4r9).
 - 10 min wait time before making a new submission.
 
-## Input Data:
+## Input Data
+
 - Test files are located in the `./test_cases` directory.
 - Each file is a .txt file containing public domain text with varying word distributions.
 - Individual input files can be very large, potentially exceeding the available physical RAM and even the combined size of RAM and swap space on the processing system.
@@ -33,7 +34,8 @@ The output file `result.txt` should contain all unique words found across the in
 
 Your program will be run on a few edge cases before the official tests.
 
-Following parameters will be used for judging: 
+Following parameters will be used for judging:
+
 - **Execution Time** – Faster solutions will receive higher scores.
 - **Memory Efficiency (tie breaker)** – Solutions that minimize memory usage will be prioritized.
 
@@ -54,6 +56,5 @@ This command creates a file around 2 GB under the `test_cases` directory. (Expec
 Alternatively, you can use `produce_x` for generating files as well!
 
 ```bash
-./produce_x 200 # generates file at test_cases directory by default, of size 200 MiB
+./produce_x 200 # generates file at test_cases directory, of size 200 MiB
 ```
-

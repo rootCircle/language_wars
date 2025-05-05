@@ -40,7 +40,6 @@ if [ ! -f "$LOCK_FILE" ]; then
 
     ./file_generator test_cases/output_2gb.txt 2000
     ./file_generator test_cases/output_5gb.txt 5000
-    ./file_generator test_cases/output_20gib.txt 20000
 
     ./produce_x 200 # generates 200 MiB file in test_cases directory
     ./produce_x 500 # generates 500 MiB file in test_cases directory
