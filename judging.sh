@@ -35,6 +35,9 @@ if [ ! -f "$LOCK_FILE" ]; then
         exit 1
     fi
 
+    echo "Cleaning old files before proceeding"
+    ./clean.sh
+
     ./file_generator test_cases/output_2gb.txt 2000
     ./file_generator test_cases/output_5gb.txt 5000
     ./file_generator test_cases/output_20gib.txt 20000
