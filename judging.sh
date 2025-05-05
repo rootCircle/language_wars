@@ -50,7 +50,7 @@ if [ ! -f "$LOCK_FILE" ]; then
       exit 1
     fi
 
-    ./unique_word_result.sh test_cases/*.txt > /dev/null 2>&1
+    ./unique_word_result.sh test_cases/*.txt 
     
     touch "$LOCK_FILE"
     
