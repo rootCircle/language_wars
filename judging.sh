@@ -43,12 +43,12 @@ if [ ! -f "$LOCK_FILE" ]; then
     ./produce_x 500 # generates 500 MiB file in test_cases directory
     ./produce_x 800 # generates 800 MiB file in test_cases directory
 
-    if ! chmod +x ./unique_word_result; then
+    if ! chmod +x ./unique_word_result.sh; then
       echo "Error: Failed to make unique_word_result executable."
       exit 1
     fi
 
-    ./unique_word_result 'result.actual.txt' > /dev/null 2>&1
+    ./unique_word_result.sh > /dev/null 2>&1
     
     touch "$LOCK_FILE"
     
