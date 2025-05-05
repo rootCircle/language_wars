@@ -22,12 +22,12 @@ fn main() {
     let args: Vec<String> = env::args().collect();
 
     if args.len() != 2 {
-        eprintln!("Usage: {} <X in GB>", args[0]);
+        eprintln!("Usage: {} <X in MB>", args[0]);
         process::exit(1);
     }
 
-    let gb: f32 = args[1].parse().expect("Invalid number for GB input");
-    let bytes_needed: f32 = gb * 1024_f32 * 1024_f32 * 1024_f32;
+    let mb: u64 = args[1].parse().expect("Invalid number for MB input");
+    let bytes_needed = mb * 1024 * 1024;
 
     let file_name = format!("test_cases/output_{}.txt", rand::random_range(0..=1000));
 
@@ -36,12 +36,12 @@ fn main() {
     let file = File::create(&file_name).expect("Failed to create file");
     let mut writer = BufWriter::new(file);
 
-    let mut bytes_written: f32 = 0_f32;
+    let mut bytes_written = 0;
 
     while bytes_written < bytes_needed {
         let word = generate_word();
         let word_with_space = format!("{} ", word);
-        bytes_written += word_with_space.len() as f32;
+        bytes_written += word_with_space.len() as u64;
 
         writer
             .write_all(word_with_space.as_bytes())
@@ -49,5 +49,5 @@ fn main() {
     }
 
     writer.flush().expect("Flush failed");
-    println!("Generated {} GB of word data in {}", gb, file_name);
+    println!("Generated {} MB of word data in {}", mb, file_name);
 }

@@ -39,14 +39,14 @@ Following parameters will be used for judging:
 
 ## Helper Files
 
-The **file_generator_mb** file will create an `output.txt` file containing X MB worth of words. It is suggested that you keep the output file size in the range of 100-200 MB for initial tests.
+The **file_generator** file will create an file containing X MB worth of words. It is suggested that you keep the output file size in the range of 100-200 MB for initial tests.
 
 For later runs, check for files greater than 2-5 GiB; in final legs, files greater than 16 GiB are recommended.
 
 To run:
 
 ```bash
-./file_generator_mb test_cases/out.txt 2000
+./file_generator test_cases/out.txt 2000
 ```
 
 This command creates a file around 2 GB under the `test_cases` directory. (Expect this to be buggy and slow)
@@ -54,6 +54,6 @@ This command creates a file around 2 GB under the `test_cases` directory. (Expec
 Alternatively, you can use `produce_x` for generating files as well!
 
 ```bash
-./produce_x 0.2 # generates file at test_cases directory by default of size 0.2 GiB
+./produce_x 200 # generates file at test_cases directory by default, of size 200 MiB
 ```
 

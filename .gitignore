@@ -1,0 +1,6 @@
+.test_cases_generated.lock
+
+# Result file
+
+result.txt
+result.*.txt
