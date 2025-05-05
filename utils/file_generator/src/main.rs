@@ -25,16 +25,16 @@ fn main() -> Result<(), Error> {
     // Get the output filename and target size from command-line arguments
     let args: Vec<String> = env::args().collect();
     if args.len() < 2 {
-        eprintln!("Usage: {} <output_filename> [<target_size_in_gb>]", args[0]);
+        eprintln!("Usage: {} <output_filename> [<target_size_in_mb>]", args[0]);
         std::process::exit(1);
     }
 
     let output_filename = &args[1];
-    let target_size_gb: u64 = if args.len() > 2 {
+    let target_size_mb: u64 = if args.len() > 2 {
         args[2].parse().unwrap_or_else(|_| {
             eprintln!(
-                "Invalid target size. Using default size of {} GiB.",
-                DEFAULT_TARGET_SIZE_BYTES / (1024 * 1024 * 1024)
+                "Invalid target size. Using default size of {} MiB.",
+                DEFAULT_TARGET_SIZE_BYTES / (1024 * 1024)
             );
             DEFAULT_TARGET_SIZE_BYTES
         })
@@ -42,10 +42,10 @@ fn main() -> Result<(), Error> {
         DEFAULT_TARGET_SIZE_BYTES
     };
 
-    let target_size_bytes = target_size_gb * 1024 * 1024 * 1024;
+    let target_size_bytes = target_size_mb * 1024 * 1024;
 
     println!("Starting optimized file generation ...");
-    println!("Filename: {} Size: {} GiB", output_filename, target_size_gb);
+    println!("Filename: {} Size: {} MiB", output_filename, target_size_mb);
 
     let start_time = Instant::now();
     let file = File::create(output_filename)?;
