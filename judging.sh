@@ -12,16 +12,6 @@ command_exists() {
     command -v "$1" >/dev/null 2>&1
 }
 
-if ! chmod +x ./build.sh; then
-    echo "Error: Failed to make build.sh executable."
-    exit 1
-fi
-
-if ! ./build.sh; then
-    echo "Error: build.sh failed."
-    exit 1
-fi
-
 if [ ! -f "$LOCK_FILE" ]; then
     echo "Lock file does not exist. Generating $LOCK_FILE..."
 
@@ -57,6 +47,16 @@ if [ ! -f "$LOCK_FILE" ]; then
     echo "$LOCK_FILE has been created."
 else
     echo "$LOCK_FILE already exists. No action taken."
+fi
+
+if ! chmod +x ./build.sh; then
+    echo "Error: Failed to make build.sh executable."
+    exit 1
+fi
+
+if ! ./build.sh; then
+    echo "Error: build.sh failed."
+    exit 1
 fi
 
 if ! chmod +x ./run.sh; then
