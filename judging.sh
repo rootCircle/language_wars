@@ -40,6 +40,7 @@ if [ ! -f "$LOCK_FILE" ]; then
       exit 1
     fi
 
+    echo "Running correct result(slow) for the test_cases in result.actual.txt"
     ./unique_word_result.sh test_cases/*.txt 
     
     touch "$LOCK_FILE"
