@@ -20,6 +20,7 @@ Develop a highly performant and resource-friendly program that identifies all un
 - Test files are located in the `./test_cases` directory.
 - Each file is a .txt file containing public domain text with varying word distributions.
 - Individual input files can be very large, potentially exceeding the available physical RAM and even the combined size of RAM and swap space on the processing system.
+- It is guaranteed that total sum of size of all test_cases won't cross 32 GiB.
 
 ## Definition of a Word
 
@@ -38,6 +39,12 @@ Following parameters will be used for judging:
 
 - **Execution Time** – Faster solutions will receive higher scores.
 - **Memory Efficiency (tie breaker)** – Solutions that minimize memory usage will be prioritized.
+
+## Test System Specification
+
+- RAM: 16 GiB (with other 16 GiB swap)
+- CPU: AMD Ryzen 5 5600H
+- GPU: Nvidia RTX 3050Ti
 
 ## Helper Files
 
