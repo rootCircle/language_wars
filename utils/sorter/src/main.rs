@@ -1,11 +1,11 @@
-use fxhash::FxHashSet;
 use memchr::memchr_iter;
 use memmap2::Mmap;
 use rayon::prelude::*;
+use rustc_hash::{FxHashSet, FxHasher};
 use std::cmp::Reverse;
 use std::collections::BinaryHeap;
 use std::fs::{self, File};
-use std::hash::{DefaultHasher, Hasher};
+use std::hash::Hasher;
 use std::io::{BufRead, BufReader, BufWriter, Write};
 use std::sync::{Arc, RwLock};
 
@@ -21,9 +21,8 @@ const MAX_WORD_LEN: usize = 32; // overlap window size
 
 #[inline]
 fn hash_partition(word: &str) -> usize {
-    let mut hasher = DefaultHasher::new();
-    //use fxhash::FxHasher;
-    //let mut hasher = FxHasher::default();
+    //let mut hasher = DefaultHasher::new();
+    let mut hasher = FxHasher::default();
     hasher.write(word.as_bytes());
     (hasher.finish() as usize) % PARTITIONS
 }

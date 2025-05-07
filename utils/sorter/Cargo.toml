@@ -7,7 +7,6 @@ edition = "2024"
 unicode-segmentation = "1.12"
 rayon = "1.10"
 num_cpus = "1.16"
-fxhash = "0.2"
 rustc-hash = "2.1.1"
 ctrlc = { version = "3.4.6", features = ["termination"] }
 memchr = "2.7.4"
