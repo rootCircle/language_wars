@@ -7,3 +7,5 @@ result.*.txt
 
 # Maybe a temporary file
 *.txt
+
+/partitions

@@ -11,6 +11,6 @@ set -e
 # Go
 # GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -ldflags="-s -w" -o app main.go
 
-cd sorter
+cd utils/sorter
 MALLOC_CONF="thp:always,metadata_thp:always" cargo build --release
 
