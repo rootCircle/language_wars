@@ -1,0 +1,27 @@
+[package]
+name = "sorter"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+unicode-segmentation = "1.12"
+rayon = "1.10"
+num_cpus = "1.16"
+fxhash = "0.2"
+rustc-hash = "2.1.1"
+ctrlc = { version = "3.4.6", features = ["termination"] }
+memchr = "2.7.4"
+memmap2 = "0.9.5"
+
+[target.'cfg(not(target_env = "msvc"))'.dependencies]
+tikv-jemallocator = "0.6"
+
+
+[profile.release]
+opt-level = 3
+overflow-checks = false
+strip = "symbols"
+codegen-units = 1
+panic = "abort"
+
+
