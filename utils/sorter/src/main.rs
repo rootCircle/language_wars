@@ -5,6 +5,7 @@ use rayon::prelude::*;
 use std::cmp::Reverse;
 use std::collections::BinaryHeap;
 use std::fs::{self, File};
+use std::hash::{DefaultHasher, Hasher};
 use std::io::{BufRead, BufReader, BufWriter, Write};
 use std::sync::{Arc, RwLock};
 
@@ -20,9 +21,9 @@ const MAX_WORD_LEN: usize = 32; // overlap window size
 
 #[inline]
 fn hash_partition(word: &str) -> usize {
-    use std::collections::hash_map::DefaultHasher;
-    use std::hash::Hasher;
     let mut hasher = DefaultHasher::new();
+    //use fxhash::FxHasher;
+    //let mut hasher = FxHasher::default();
     hasher.write(word.as_bytes());
     (hasher.finish() as usize) % PARTITIONS
 }
